@@ -1,0 +1,131 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Responsive image rule */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  /* Header styles with purple background */
+  header {
+    background-color: #8a2be2; /* Purple color */
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #9932cc; /* Darker purple on hover */
+    border-radius: 4px;
+  }
+  
+  /* Main content styles */
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f0f0f0; /* Off-white background */
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Gallery styles - Updated for 3x3 grid with white borders */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
+  }
+  
+  figure {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    max-width: 300px; /* Set a max-width to match the previous style */
+    width: 100%; /* Ensure it takes full width up to the max-width */
+    margin: 0 auto; /* Center the figure if it's smaller than its grid cell */
+  }
+  
+  figure:hover {
+    transform: translateY(-5px);
+  }
+  
+  figure img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #8a2be2; /* Purple color to match header */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    figure {
+      max-width: 100%; /* Allow figures to take full width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+    figure {
+      max-width: 100%; /* Ensure figures take full width on mobile */
+    }
+  }
+  
+  
