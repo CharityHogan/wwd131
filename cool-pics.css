@@ -30,6 +30,10 @@
     text-align: center;
   }
   
+  /*
+  try tweaking these base (mobile-first) rules to stack the nav as in the
+  mockup
+  */
   nav ul {
     list-style-type: none;
     display: flex;
@@ -71,7 +75,11 @@
   /* Gallery styles - Updated for 3x3 grid with white borders */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /*
+    mobile-first rather than desktop-first
+    see comments in your media queries for more info and additional changes
+    */
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin: 0 auto;
   }
@@ -89,6 +97,7 @@
     margin: 0 auto; /* Center the figure if it's smaller than its grid cell */
   }
   
+  /* nice effect! */
   figure:hover {
     transform: translateY(-5px);
   }
@@ -110,21 +119,37 @@
   }
   
   /* Responsive adjustments */
-  @media (max-width: 900px) {
+  @media (min-width: 600px) {
     .gallery {
       grid-template-columns: repeat(2, 1fr);
     }
     figure {
       max-width: 100%; /* Allow figures to take full width on smaller screens */
     }
+    /* hide the nav in mid breakpoints */
+    nav {
+      display: none;
+    }
   }
   
-  @media (max-width: 600px) {
+  /*
+  typically, web pages should be mobile-first (min-width) rather than
+  desktop-first (max-width). obviously, that's not the case in all situations
+  but is a general rule
+  */
+  @media (min-width: 900px) {
     .gallery {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
     figure {
       max-width: 100%; /* Ensure figures take full width on mobile */
+    }
+    /* redisplay the nave in large breakpoints */
+    nav {
+      display: initial;
+    }
+    nav ul {
+      display: flex;
     }
   }
   
