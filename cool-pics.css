@@ -1,131 +1,198 @@
 /* Reset and base styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Responsive image rule */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-  }
-  
-  /* Header styles with purple background */
-  header {
-    background-color: #8a2be2; /* Purple color */
-    color: #fff;
-    padding: 1rem;
-  }
-  
-  h1 {
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  nav ul li {
-    margin: 0 0.5rem;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #9932cc; /* Darker purple on hover */
-    border-radius: 4px;
-  }
-  
-  /* Main content styles */
-  main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #f0f0f0; /* Off-white background */
-    border-radius: 8px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  /* Gallery styles - Updated for 3x3 grid with white borders */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive image rule */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header styles with purple background */
+header {
+  background-color: #8a2be2; /* Purple color */
+  color: #fff;
+  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 0.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #9932cc; /* Darker purple on hover */
+  border-radius: 4px;
+}
+
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f0f0f0; /* Off-white background */
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Gallery styles - Updated for 3x3 grid with white borders */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+figure {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  max-width: 300px; /* Set a max-width to match the previous style */
+  width: 100%; /* Ensure it takes full width up to the max-width */
+  margin: 0 auto; /* Center the figure if it's smaller than its grid cell */
+}
+
+figure:hover {
+  transform: translateY(-5px);
+}
+
+figure img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #8a2be2; /* Purple color to match header */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
   figure {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    aspect-ratio: 1 / 1;
-    padding: 10px;
-    max-width: 300px; /* Set a max-width to match the previous style */
-    width: 100%; /* Ensure it takes full width up to the max-width */
-    margin: 0 auto; /* Center the figure if it's smaller than its grid cell */
+    max-width: 100%; /* Allow figures to take full width on smaller screens */
   }
-  
-  figure:hover {
-    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
   }
-  
-  figure img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 4px;
+  figure {
+    max-width: 100%; /* Ensure figures take full width on mobile */
   }
-  
-  /* Footer styles */
-  footer {
-    background-color: #8a2be2; /* Purple color to match header */
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+}
+
+/* Menu toggle button for small screens */
+.menu-button {
+  display: none;
+  background-color: #8a2be2;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Menu on small screens */
+nav ul.hide {
+  display: none;
+}
+
+/* Make menu visible on large screens */
+@media (min-width: 1000px) {
+  .menu-button {
+    display: none;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 900px) {
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    figure {
-      max-width: 100%; /* Allow figures to take full width on smaller screens */
-    }
+  nav ul {
+    display: flex;
   }
-  
-  @media (max-width: 600px) {
-    .gallery {
-      grid-template-columns: 1fr;
-    }
-    figure {
-      max-width: 100%; /* Ensure figures take full width on mobile */
-    }
-  }
-  
-  
+}
+
+/* Styles for image viewer (modal) */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75); /* Semi-transparent black background */
+  display: flex; /* Change to flex for centering */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  z-index: 10;
+  padding: 10px; /* Add some padding around the modal */
+}
+
+/* Modal image styles */
+.viewer img {
+  max-height: 80%; /* Limit image height to 80% of screen */
+  max-width: 90%;  /* Limit image width to 90% of screen */
+  object-fit: contain; /* Preserve aspect ratio */
+  border-radius: 8px; /* Optional rounded corners */
+  display: block; /* Ensure image is displayed as a block element */
+}
+
+/* Close button styling */
+.close-viewer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it stays above the image */
+}
+
+.close-viewer:hover {
+  background-color: #ff4747; /* Hover effect */
+  color: #fff;
+}
