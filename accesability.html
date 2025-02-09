@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="accessible.css">
+    <title>Accessible Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        a {
+            color: #0056b3; /* High contrast blue */
+            text-decoration: underline;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <h1>Welcome to Our Accessible Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="about">
+            <h2>About Our Mission</h2>
+            <p>We are dedicated to making the web accessible to everyone, including users with disabilities.</p>
+            <img src="images/raf,360x360,075,t,fafafa_ca443f4786.jpg" alt="An emoji smiling face">
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <h3>Web Accessibility Audits</h3>
+            <p>We review websites to ensure compliance with accessibility standards.</p>
+            
+            <h3>Accessibility Training</h3>
+            <p>Our team provides training sessions to help developers create inclusive content.</p>
+        </section>
+
+        <!-- Proper Link Text Example -->
+        <section>
+            <h2>Learn More</h2>
+            <p>Visit <a href="https://webaim.org/">WebAIM's guide on web accessibility</a> for more information.</p>
+        </section>
+    </main>
+
+    <!-- Footer with Semantic Elements -->
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+        <p>Phone: (555) 123-4567</p>
+        <button onclick="alert('Thank you for visiting!')">Click Me</button>
+    </footer>
+
+</body>
+</html>
