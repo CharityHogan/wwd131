@@ -1,0 +1,155 @@
+/* General Page Styling */
+body {
+    font-family: "Georgia", serif;
+    background-color: #fdfaf6;
+    margin: 0;
+    padding: 0;
+    color: #5a3e36;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #d3a580;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin: 20px 0;
+    color: #a52a2a;
+  }
+  
+  nav {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    color: #a52a2a;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Layout */
+  .content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+  }
+  
+  #filters {
+    flex: 0 0 250px;
+    background-color: #f0e6d9;
+    padding: 20px;
+    border-radius: 5px;
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
+  }
+  
+  #book-reviews {
+    flex: 1;
+  }
+  
+  /* Filter Styles */
+  #filters h2 {
+    margin-top: 0;
+    color: #a52a2a;
+  }
+  
+  #filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #filter-form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #filter-form label {
+    margin-bottom: 5px;
+    color: #5a3e36;
+  }
+  
+  #filter-form select,
+  #filter-form button {
+    padding: 5px;
+    border: 1px solid #d3a580;
+    border-radius: 3px;
+  }
+  
+  #filter-form button {
+    background-color: #a52a2a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #filter-form button:hover {
+    background-color: #8b2323;
+  }
+  
+  /* Article Styling */
+  .book-review {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    border-bottom: 1px solid #d3a580;
+    padding: 20px 0;
+  }
+  
+  .book-meta {
+    text-align: right;
+    font-size: 16px;
+    color: #8b5a2b;
+    line-height: 1.4;
+  }
+  
+  .book-content {
+    border-left: 1px solid #d3a580;
+    padding-left: 20px;
+  }
+  
+  .book-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a52a2a;
+    text-decoration: none;
+    margin-top: -5px;
+    display: block;
+  }
+  
+  .book-content img {
+    max-width: 120px;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  .book-description {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+  
+    #filters {
+      position: static;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  

@@ -3,216 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids Read for Fun</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            width: 100%;
-            background-color: #f8f1f1;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2rem;
-            color: #d72638;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #4e4e4e;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #d72638;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            gap: 20px;
-            width: 80%;
-            margin-top: 20px;
-        }
-
-        .book-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #f8b500;
-        }
-
-        .book-details p {
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .book-info {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #007bff;
-        }
-
-        .book-info h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #007bff;
-        }
-
-        .book-info img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .book-info p {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .book-info button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .book-info button:hover {
-            background-color: #0056b3;
-        }
-
-        .filters {
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #28a745;
-        }
-
-        .filters label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        .filters select {
-            width: 100%;
-            padding: 8px;
-            font-size: 0.9rem;
-            background-color: #f8f1f1;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-        }
-
-        footer {
-            width: 100%;
-            background-color: #f8f1f1;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                grid-template-columns: 1fr;
-                width: 95%;
-            }
-        }
-    </style>
+    <title>Kids Read For Fun</title>
+    <link rel="stylesheet" href="book.css">
 </head>
 <body>
     <header>
-        <h1>Kids Read for Fun</h1>
+        <h1>Kids Read For Fun</h1>
         <nav>
-            <a href="#about">About</a>
-            <a href="#archive">Archive</a>
-            <a href="#search">Search</a>
+            <a href="#">About</a>
+            <a href="#">Archive</a>
+            <a href="#">Search</a>
         </nav>
     </header>
-    <main>
-        <section class="book-details">
-            <p>July 5, 2022</p>
-            <p>10-14</p>
-            <p>Fantasy</p>
-            <p>★★★★</p>
-        </section>
-        <section class="book-info">
-            <h2>Septimus Heap Book One: Magyk</h2>
-            <img src="images/raf,360x360,075,t,fafafa_ca443f4786.jpg" alt="Smiling emoji Book Cover">
-            <p>This enchanting book follows the adventures of Septimus Heap, a young wizard in training. Packed with magic, mystery, and humor, it's a must-read for fans of fantasy.</p>
-            <button>Add to Favorites</button>
-        </section>
-        <section class="filters">
-            <label for="sort">Sort:</label>
-            <select id="sort">
-                <option value="">Select</option>
-                <option value="date">Date</option>
-                <option value="rating">Rating</option>
-            </select>
 
-            <label for="age">Age:</label>
-            <select id="age">
-                <option value="">Select</option>
-                <option value="7-9">7-9</option>
-                <option value="10-12">10-12</option>
-                <option value="13-15">13-15</option>
-            </select>
-
-            <label for="genre">Genre:</label>
-            <select id="genre">
-                <option value="">Select</option>
-                <option value="fantasy">Fantasy</option>
-                <option value="adventure">Adventure</option>
-                <option value="mystery">Mystery</option>
-            </select>
-
-            <label for="rating">Rating:</label>
-            <select id="rating">
-                <option value="">Select</option>
-                <option value="4">4 stars</option>
-                <option value="5">5 stars</option>
-            </select>
-        </section>
+    <main class="content-wrapper">
+        <aside id="filters">
+            <h2>Filter Books</h2>
+            <form id="filter-form">
+                <div>
+                    <label for="reading-level">Reading Level:</label>
+                    <select id="reading-level" name="reading-level">
+                        <option value="">All</option>
+                        <option value="10-14">10-14</option>
+                        <option value="12-16">12-16</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="genre">Genre:</label>
+                    <select id="genre" name="genre">
+                        <option value="">All</option>
+                        <option value="Fantasy">Fantasy</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fiction">Type:</label>
+                    <select id="fiction" name="fiction">
+                        <option value="">All</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="nonfiction">Non-fiction</option>
+                    </select>
+                </div>
+                <button type="submit">Apply Filters</button>
+            </form>
+        </aside>
+        <section id="book-reviews"></section>
     </main>
-    <footer>
-        <p>&copy; 2025 Kids Read for Fun. All rights reserved.</p>
-    </footer>
+
+    <script src="kidsbook.js" defer></script>
 </body>
 </html>
+
