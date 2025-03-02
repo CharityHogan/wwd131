@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Sections</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course: <span id="courseName"></span> (<span id="courseCode"></span>)</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Section Number</th>
+                <th>Room Number</th>
+                <th>Enrolled</th>
+                <th>Days</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody id="sections"></tbody>
+    </table>
+
+    <!-- Linking the JavaScript file -->
+    <script src="ponder.js"></script>
+</body>
+</html>
