@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hike Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 50%;
+            padding: 8px;
+            margin: 10px auto;
+            display: block;
+            font-size: 16px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .hike-list {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hike {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .hike:last-child {
+            border-bottom: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        .tags {
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Your Perfect Hike</h1>
+    <input type="text" id="searchInput" placeholder="Search by name, description, or tag...">
+    <button onclick="filterHikes()">Search</button>
+
+    <div class="hike-list" id="hikeList"></div>
+
+    <script>
+        const hikes = [
+            { name: "Bechler Falls", imgSrc: "https://wdd131.netlify.app/examples/hikes/images/bechler-falls.jpg", distance: "3 miles", tags: ["Easy", "Yellowstone", "Waterfall"], description: "Beautiful short hike in Yellowstone along the Bechler river to Bechler Falls" },
+            { name: "Teton Canyon", imgSrc: "https://wdd131.netlify.app/examples/hikes/images/teton-canyon.jpg", distance: "3 miles", tags: ["Easy", "Tetons"], description: "Beautiful short (or long) hike through Teton Canyon." },
+            { name: "Denanda Falls", imgSrc: "https://wdd131.netlify.app/examples/hikes/images/denanda-falls.jpg", distance: "7 miles", tags: ["Moderate", "Yellowstone", "Waterfall"], description: "Beautiful hike through Bechler meadows to Denanda Falls" },
+            { name: "Coffee Pot Rapids", imgSrc: "https://wdd131.netlify.app/examples/hikes/images/coffee-pot.jpg", distance: "2.2 miles", tags: ["Easy"], description: "Beautiful hike along the Henry's Fork of the Snake River to a set of rapids." },
+            { name: "Menan Butte", imgSrc: "https://wdd131.netlify.app/examples/hikes/images/menan-butte.jpg", distance: "3.4 miles", tags: ["Moderate", "View"], description: "A steep climb to one of the largest volcanic tuff cones in the world." }
+        ];
+
+        function displayHikes(hikesToShow) {
+            const hikeList = document.getElementById("hikeList");
+            hikeList.innerHTML = ""; 
+
+            hikesToShow.forEach(hike => {
+                const hikeElement = document.createElement("div");
+                hikeElement.classList.add("hike");
+                hikeElement.innerHTML = `
+                    <h3>${hike.name} (${hike.distance})</h3>
+                    <img src="${hike.imgSrc}" alt="${hike.name}">
+                    <p>${hike.description}</p>
+                    <p class="tags">Tags: ${hike.tags.join(", ")}</p>
+                `;
+                hikeList.appendChild(hikeElement);
+            });
+        }
+
+        function filterHikes() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const filteredHikes = hikes.filter(hike => 
+                hike.name.toLowerCase().includes(query) ||
+                hike.description.toLowerCase().includes(query) ||
+                hike.tags.some(tag => tag.toLowerCase().includes(query))
+            );
+
+            const sortedHikes = filteredHikes.sort((a, b) => parseFloat(a.distance) - parseFloat(b.distance));
+            displayHikes(sortedHikes);
+        }
+
+        // Show all hikes by default
+        displayHikes(hikes);
+    </script>
+
+</body>
+</html>
